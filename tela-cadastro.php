@@ -8,396 +8,178 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script src="https://kit.fontawesome.com/e437aa63eb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
     <style>
-     
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-  /* Estilos para campos preenchidos automaticamente */
-  .autofill {
-    background-color: #f0f0f0 !important; /* Cor de fundo desejada para campos preenchidos automaticamente */
-    /* Outros estilos personalizados, se necessário */
-}
+       
 
-
-        /* Estilos para o modo escuro */
-        body.dark-mode {
-            background-color: #333333; /* Cor de fundo para o modo escuro */
-            color: #ffffff; /* Cor do texto para o modo escuro */
-        }
-        /* styles.css */
-
-body {
-   
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-button {
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-.text{
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px; 
-}
-.volta{
-    background-color: #007bff; 
-}
-.envia{
-    background-color: green;
-}
-
-.but{
-    width: 300px; /* Defina a largura desejada */
-    margin: 0 auto;
-}
-button:hover {
-    background-color: #0056b3;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"] {
-   
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-.data{
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc; 
-}
-
-.dark-mode-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.dark-mode-toggle:hover {
-    background-color: #0056b3;
-}
-
-.dark-mode .container {
-    background-color: #333333;
-    color: #ffffff;
-}
-
-.dark-mode input[type="text"],
-.dark-mode input[type="password"],
-.dark-mode input[type="email"],
-.dark-mode input[type="date"],
-.dark-mode select[type="text"],.dark-mode input[type="tel"] {
-    background-color: #555555;
-    color: #ffffff;
-    border-color: #999999;
-}
-.dark-mode option{
-    background-color: #555555;
-    color: #ffffff;
-    border-color: #999999;
-}
-
-.dark-mode select.sel select {
-    background-color: #555555;
-    color: #ffffff;
-}
-.dark-mode select#estado select {
-    background-color: #555555;
-    color: #ffffff;
-}
-
-.icone{
-    float: right;
-}
-/* Estilos para todos os fieldsets */
-fieldset {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 20px;
-    margin: 0 auto; /* Define as margens laterais automáticas */
-    width: 50%;
-    
-}label {
-    display: inline-block; /* Permite definir largura e espaçamento */
-    width: 150px; /* Define a largura dos rótulos */
-    margin-right: 10px; /* Adiciona margem à direita dos rótulos */
-    
-  }
-  select{
-    padding: 8px; /* Adiciona espaçamento interno */
-            font-size: 16px; /* Tamanho da fonte */
-            border: 1px solid #ccc; /* Adiciona uma borda */
-            border-radius: 5px; /* Adiciona cantos arredondados */
-            width: 200px; /* Largura do select */
-            appearance: none; /* Remove os estilos padrão do sistema operacional */
-            background-color: #fff; /* Cor de fundo */
-            color: #333; /* Cor do texto */
-        }
-  h2{width: 300px; /* Defina a largura desejada */
-    margin: 0 auto;
-
-  }
-        /* Estilo para as opções */
-        
-  /* Estilo para os campos de entrada */
-  input[type="text"],
-  input[type="date"],
-  input[type="password"],
-  input[type="tel"] {
-    width: 200px; /* Defina a largura desejada para os inputs */
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc; 
-}
-select {
-    padding: 10px; /* Adiciona espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    border: 1px solid #ccc; /* Adiciona uma borda */
-    border-radius: 5px; /* Adiciona cantos arredondados */
-    width: calc(100% - 60px); /* Define a largura do select de acordo com a largura dos outros campos */
-    appearance: none; /* Remove os estilos padrão do sistema operacional */
-    background-color: #fff; /* Cor de fundo */
-    color: #333; /* Cor do texto */
-}
-.dark-mode select {
-    background-color: #555555; /* Cor de fundo para o modo escuro */
-    color: #ffffff; /* Cor do texto para o modo escuro */
-    border-color: #999999; /* Cor da borda para o modo escuro */
-}
-
-
+       
 
 
 
 
     </style>
 </head>
-<body>
-    <i class="fa-solid fa-circle-half-stroke  icone">
-   <button onclick="toggleDarkMode()">Ativar/Desativar Modo Escuro</button></i>
+<!DOCTYPE html>
+<html lang="en">
 
-  
-    <h2> Formul&aacuterio de cadastro</h2><br />
-  
-  <form action="Script_do_Formulario" method="post">
-  
-  
-    <fieldset>
-        <legend>Dados Pessoais</legend>
-        <table cellspacing="10">
-            <tr>
-                <td>
-                    <label for="nome">Nome:</label>
-                    <input required type="text" name="nome" placeholder="Nome">
-                </td>
-                <td>
-                    <label for="sobrenome">Sobrenome:</label>
-                    <input required type="text" name="sobrenome" placeholder="Sobrenome">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="data">Nascimento:</label>
-                    <input required type="date" class="date" name="data" placeholder="dd/mm/aaaa">
-                </td>
-                <td>
-                    <label for="cpf">CPF:</label>
-                    <input class="cpf" type="text" name="cpf" inputmode="numeric" minlength="11" maxlength="11" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required autocomplete="off">
-                </td>
-            </tr>
-        </table>
-    </fieldset>
-    
-  
-  <br />
-  
-  <fieldset>
-    <legend>Dados de Endereço</legend>
-    <table cellspacing="10">
-   
-     <tr>
-         <td>
-             <label for="rua">Rua:</label>
-             <input type="text" name="rua" placeholder="rua">
-         </td>
-         <td>
-             <label for="numero">Número:</label>
-             <input type="text" name="numero" size="4" placeholder="n">
-         </td>
-     </tr>
-     <tr>
-         <td>
-             <label for="bairro">Bairro:</label>
-             <input type="text" name="bairro" placeholder="bairro">
-         </td>
-         <td>
-             <label for="estado">Estado:</label>
-             <select name="estado" class="sel" placeholder="estado"> 
-                <option value="" disabled selected hidden >Selecione um estado</option>
-                <option value="ac">Acre</option> 
-                <option value="al">Alagoas</option> 
-                <option value="am">Amazonas</option> 
-                <option value="ap">Amap&aacute</option> 
-                <option value="ba">Bahia</option> 
-                <option value="ce">Cear&aacute</option> 
-                <option value="df">Distrito Federal</option> 
-                <option value="es">Esp&iacuterito Santo</option> 
-                <option value="go">Goi&aacutes</option> 
-                <option value="ma">Maranh&atildeo</option> 
-                <option value="mt">Mato Grosso</option> 
-                <option value="ms">Mato Grosso do Sul</option> 
-                <option value="mg">Minas Gerais</option> 
-                <option value="pa">Par&aacute</option> 
-                <option value="pb">Para&iacuteba</option> 
-                <option value="pr">Paran&aacute</option> 
-                <option value="pe">Pernambuco</option> 
-                <option value="pi">Piau&iacute</option> 
-                <option value="rj">Rio de Janeiro</option> 
-                <option value="rn">Rio Grande do Norte</option> 
-                <option value="ro">Rond&ocircnia</option> 
-                <option value="rs">Rio Grande do Sul</option> 
-                <option value="rr">Roraima</option> 
-                <option value="sc">Santa Catarina</option> 
-                <option value="se">Sergipe</option> 
-                <option value="sp">S&atildeo Paulo</option> 
-                <option value="to">Tocantins</option> 
-             </select>
-         </td>
-     </tr>
-     <tr>
-         <td>
-             <label for="cidade">Cidade:</label>
-             <input id="cidade" type="text"  name="cidade"  placeholder="cidade">
-         </td>
-         <td>
-             <label for="cep">CEP:</label>
-             <input type="text" class="cep" name="cep" placeholder="00000-000"> 
-         </td>
-     </tr>
-    </table>
- </fieldset>
- 
-  <br />
-  
-  
-  <fieldset>
-   <legend>Dados de login</legend>
-   <table cellspacing="10">
-    <tr>
-        <td>
-            <label for="email">E-mail: </label>
-            <input type="text" name="email" placeholder="email">
-        </td>
-        <td>
-        <label for="login">confirme e-mail </label>
-        <input required type="text" name="login" placeholder="confirme email">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label for="pass">Senha: </label>
-            <input required type="password" name="pass" id="senha" placeholder="senha">
-        </td>
-        <td>
-            <label for="passconfirm">Confirme a senha: </label>
-            <input required type="password" name="passconfirm" id="confsenha" placeholder="confirme senha">
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2"> <!-- Colspan define quantas células a linha deve abranger -->
-            <input type="checkbox" onclick="mostra()" onKeyUp="verifica()">
-            <b>Mostrar senha</b>
-        </td>
-    </tr>
-    
-    
-       </table>
-</fieldset>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme with Tailwind CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-blue-100 text-gray-600">
+    <div class="container mx-auto p-4 lg:w-1/2">
+        <h1 class="text-4xl font-bold mb-8">Formul&aacuterio de cadastro</h1>
+        <button onclick="toggleDarkMode()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Ativar/Desativar Modo Escuro</button>
+        <form action="Script_do_Formulario" method="post">
+            <fieldset class="bg-white rounded-lg shadow-md p-4 border-solid border-2 border-gray-100 mb-2">
+                <legend class="text-xl font-bold mb-4 text-gray-600">Dados Pessoais</legend>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-bold">
+                    <div>
+                        <label for="nome" class="block mb-2 ">Nome:</label>
+                        <input required type="text" name="nome" placeholder="Nome" class="w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label for="sobrenome" class="block mb-2">Sobrenome:</label>
+                        <input required type="text" name="sobrenome" placeholder="Sobrenome" class="w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label for="data" class="block mb-2">Nascimento:</label>
+                        <input required type="date" class="date w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label for="cpf" class="block mb-2">CPF:</label>
+                        <input class="cpf w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100" type="text" name="cpf" inputmode="numeric" minlength="11" maxlength="11" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required autocomplete="off">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="bg-white rounded-lg shadow-md p-4 border-solid border-2 border-gray-100 mb-4 text-gray-600">
+                <legend class="text-xl font-semibold mb-4">Dados de Endereço</legend>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-bold">
+                    <div>
+                        <label for="rua" class="block mb-2">Rua:</label>
+                        <input type="text"required  name="rua" placeholder="rua"placeholder="rua" class="w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                     </div>
+                    <div>
+                        <label for="numero" class="block mb-2">Número:</label>
+                        <input required  type="text" name="numero" size="4" placeholder="n" class="w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label for="bairro" class="block mb-2">Bairro:</label>
+                        <input required  type="text" name="bairro" placeholder="bairro" class="date w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label class="block mb-2"for="estado">Estado:</label>
+                       
+                        
+                        <select name="estado" placeholder="estado"class="bg-blue-100 sel w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100"> 
+                            <option value="" disabled selected hidden >Selecione um estado</option>
+                            <option value="ac" >Acre</option> 
+                            <option value="al">Alagoas</option> 
+                            <option value="am">Amazonas</option> 
+                            <option value="ap">Amap&aacute</option> 
+                            <option value="ba">Bahia</option> 
+                            <option value="ce">Cear&aacute</option> 
+                            <option value="df">Distrito Federal</option> 
+                            <option value="es">Esp&iacuterito Santo</option> 
+                            <option value="go">Goi&aacutes</option> 
+                            <option value="ma">Maranh&atildeo</option> 
+                            <option value="mt">Mato Grosso</option> 
+                            <option value="ms">Mato Grosso do Sul</option> 
+                            <option value="mg">Minas Gerais</option> 
+                            <option value="pa">Par&aacute</option> 
+                            <option value="pb">Para&iacuteba</option> 
+                            <option value="pr">Paran&aacute</option> 
+                            <option value="pe">Pernambuco</option> 
+                            <option value="pi">Piau&iacute</option> 
+                            <option value="rj">Rio de Janeiro</option> 
+                            <option value="rn">Rio Grande do Norte</option> 
+                            <option value="ro">Rond&ocircnia</option> 
+                            <option value="rs">Rio Grande do Sul</option> 
+                            <option value="rr">Roraima</option> 
+                            <option value="sc">Santa Catarina</option> 
+                            <option value="se">Sergipe</option> 
+                            <option value="sp">S&atildeo Paulo</option> 
+                            <option value="to">Tocantins</option> 
+                         </select>
+                    </div>
+                    <div>
+                        <label  class="block mb-2"for="cidade">Cidade:</label>
+                        <input required id="cidade" type="text"  name="cidade"  placeholder="cidade" class=" w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label  class="block mb-2"for="cep">CEP:</label>
+                        <input required type="text"  name="cep" placeholder="00000-000" class="cep w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="bg-white rounded-lg shadow-md p-4  border-solid border-2 border-gray-100 mb-4 text-gray-600">
+                <legend class="text-xl font-semibold mb-4">Dados de login</legend>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-bold">
+                    <div>
+                        <label for="email" class="block mb-2">Email:</label>
+                        <input required  type="text" name="email" placeholder="email" class="w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label for="login" class="block mb-2">confirme e-mail:</label>
+                        <input required type="text" name="login" placeholder="confirme email" class="w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label  class="block mb-2"for="pass">Senha:</label>
+                        <input required type="password" name="pass" id="senha" placeholder="senha" class=" w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label  class="block mb-2" for="passconfirm">Confirme a senha:</label>
+                        <input type="password" name="passconfirm" id="confsenha" placeholder="confirme senha" class=" w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100" type="text" name="cpf" inputmode="numeric" minlength="11" maxlength="11" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required autocomplete="off">
+                    </div>
+                    <td colspan="2"> <!-- Colspan define quantas células a linha deve abranger -->
+                        <input type="checkbox" onclick="mostra()" onKeyUp="verifica()">
+                        <b>Mostrar senha</b>
+                    </td>
+                </div>
+            </fieldset>
+            <fieldset class="bg-white rounded-lg shadow-md p-4  border-solid border-2 border-gray-100 mb-4 text-gray-600">
+                <legend class="text-xl font-semibold mb-4">dados para recuperação de senha</legend>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-bold">
+                    <div>
+                        <label  class="block mb-2" for="telefone">Telefone:</label>
+                        <input required type="tel"  name="telefone" placeholder="(xx)xxxxxxxx" maxlength="11" class="phone w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                    <div>
+                        <label  class="block mb-2" for="palavra">Email secundário:</label>
+                        <input required type="text" name="pchave"  placeholder="email secundario" class="w-full px-4 py-2 rounded-md border-solid border-2 border-gray-100">
+                    </div>
+                   
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+        
 <br />
-<fieldset>
-    <legend>dados para recuperação de senha</legend>
-    <table cellspacing="10">
-        <tr>
-            <td>
-                <label for="telefone">Telefone:</label>
-            
-                <input required type="tel" class="phone" name="telefone" placeholder="(xx)xxxxxxxx" maxlength="11">
-            </td>
-       
-            <td>
-                <label for="palavra">Email secundário:</label> 
-                <input required type="text" name="pchave"  placeholder="email secundario">
-            </td>
-        </tr>
-    </table>
-</fieldset>
 
-
-<br />
-<div class="but"> 
-  <input type="submit" id="recsenha" onClick="voltapag()" class="text volta" value="voltar">    
-  <input type="submit" value="enviar" class="text envia">
+</div>
   
 </div>
-
+<div class="flex justify-center sm:m-6">
+    <input type="submit" id="recsenha" onClick="voltapag()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer mb-2 lg:mb-0 lg:mr-2" value="Voltar">
+    <input type="submit" value="Enviar" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer mb-2 lg:mb-0 lg:ml-2">
+</div>
   
   </form>
   
    </body>
 <script>
-    function toggleDarkMode() {
-        var element = document.body;
-        element.classList.toggle("dark-mode");
-    }
+   
     function mostra() {
             var temp = document.getElementById("senha");
             if (temp.type === "password") {
@@ -417,52 +199,96 @@ select {
          function voltapag(){
                 window.location="login.html";
         }
+            // Valida e envia o formulário
+            function validateAndSubmit() {
+            // Validação do formulário
+            if (validateForm()) {
+                // Envio do formulário (exemplo com AJAX)
+                $.ajax({
+                    url: "Script_do_Formulario",
+                    type: "POST",
+                    data: $("#registrationForm").serialize(),
+                    success: function(response) {
+                        alert("Formulário enviado com sucesso!");
+                    },
+                    error: function(xhr, status, error) {
+                        alert("Ocorreu um erro ao enviar o formulário.");
+                    }
+                });
+            }
+        }
+
+        // Validação do formulário
         function validateForm() {
-        var form = document.getElementById("registrationForm");
-        var email = form.querySelector("input[name='email']").value;
-        var login = form.querySelector("input[name='login']").value;
-        var senha = form.querySelector("input[name='pass']").value;
-        var confSenha = form.querySelector("input[name='passconfirm']").value;
+            var form = document.getElementById("registrationForm");
+            var email = form.querySelector("input[name='email']").value;
+            var login = form.querySelector("input[name='login']").value;
+            var senha = form.querySelector("input[name='pass']").value;
+            var confSenha = form.querySelector("input[name='passconfirm']").value;
 
-        // Validar e-mail
-        if (!validateEmail(email)) {
-            alert("Por favor, insira um e-mail válido.");
-            return false;
+            // Validação de e-mail
+            if (!validateEmail(email)) {
+                alert("Por favor, insira um e-mail válido.");
+                return false;
+            }
+
+            // Confirmação de e-mail
+            if (email !== login) {
+                alert("Os campos de e-mail e confirmação de e-mail devem ser iguais.");
+                return false;
+            }
+
+            // Validação de senha
+            if (senha.length < 8) {
+                alert("A senha deve ter pelo menos 8 caracteres.");
+                return false;
+            }
+
+            // Confirmação de senha
+            if (senha !== confSenha) {
+                alert("Os campos de senha e confirmação de senha devem ser iguais.");
+                return false;
+            }
+
+            // Se a validação passar, o formulário será enviado
+            return true;
         }
 
-        // Confirmar e-mail
-        if (email !== login) {
-            alert("Os campos de e-mail e confirmação de e-mail devem ser iguais.");
-            return false;
+        // Validação de e-mail
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
         }
+   
+        function toggleDarkMode() {
+    const body = document.body;
+    const inputs = document.querySelectorAll('input');
+    const divs = document.querySelectorAll('div');
+    const fild = document.querySelectorAll('fieldset');
 
-        // Validar senha
-        if (senha.length < 8) {
-            alert("A senha deve ter pelo menos 8 caracteres.");
-            return false;
-        }
+    body.classList.toggle("bg-gray-900");
+    body.classList.toggle("text-white");
+    body.classList.toggle("bg-white");
+    body.classList.toggle("text-gray-900");
 
-        // Confirmar senha
-        if (senha !== confSenha) {
-            alert("Os campos de senha e confirmação de senha devem ser iguais.");
-            return false;
-        }
+    inputs.forEach(input => {
+        input.classList.toggle("bg-blue-100");
+        input.classList.toggle("text-black");
+        input.classList.toggle("placeholder-black");
 
-        // Se a validação passar, o formulário será enviado
-        return true;
-    }
-
-    function validateEmail(email) {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-    var inputFields = document.querySelectorAll('input:-webkit-autofill');
-
-    inputFields.forEach(function(field) {
-        field.classList.add('autofill');
     });
-});
+
+    divs.forEach(div => {
+        div.classList.toggle("bg-gray-900");
+        div.classList.toggle("text-white");
+        
+    });
+    fild.forEach(fieldset => {
+        fieldset.classList.toggle("bg-gray-900");
+        fieldset.classList.toggle("text-white");
+        fieldset.classList.toggle("placeholder-gray-400");
+    });
+}
 
 </script>
 
